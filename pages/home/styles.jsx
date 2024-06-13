@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'#111',
   },
   map: {
     position: 'absolute',
@@ -33,6 +34,21 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
+  image: {
+    width: 390,
+    height: 600,
+  },
+  textoBranco: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  botao:{
+    backgroundColor: '#80f',
+    marginTop:20,
+    width:"40%",
+    alignItems:"center",
+    borderRadius:10
+  }
 });
 
 export default styles;

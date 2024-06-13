@@ -1,9 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Feather, EvilIcons } from '@expo/vector-icons';
+import { Feather, EvilIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import Login from './pages/auth/login';
 import Home from './pages/home/home';
+import Details from './pages/details/details';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -50,6 +51,18 @@ function MyTabs() {
                     headerShown: false,
                 }}
             />
+            <Tab.Screen
+                name="Details"
+                component={Details}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: (({size, color}) => 
+                        <MaterialCommunityIcons name="details" 
+                            size={size} 
+                            color={color}
+                        />)
+                }} 
+            />
         </Tab.Navigator>
     );
 }
@@ -71,6 +84,11 @@ export default function Routers() {
                 <Stack.Screen
                     name="Home"
                     component={Home}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Details"
+                    component={Details}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
